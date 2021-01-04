@@ -8,6 +8,6 @@
                    [clj-http "3.10.3"]
                    [org.clojure/data.json "1.0.0"]]
     :mirrors {#"central" {:name "Huawei" :url "https://mirrors.huaweicloud.com/repository/maven/" :repo-manager true}
-              "*"        {:name "Huawei" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
+              "*"        {:name "Aliyun" :url "http://maven.aliyun.com/nexus/content/groups/public"}}
     :main club.geek666.baiduindex.core
     :repl-options {:init-ns club.geek666.baiduindex.core})
