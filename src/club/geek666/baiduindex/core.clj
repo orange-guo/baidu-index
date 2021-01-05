@@ -6,7 +6,6 @@
     (:gen-class))
 
 ; area=0&word=[[{"name":"迪奥","wordType":1}]]&days=30
-; cookie must contains BDUSS
 
 (def baidu-uss "UNsNjd2bVFQWnBkUVFFU2VydWNhR2pEYnVMMFpiaWdMUmN4cjdHNVZOSDNwaHBnSVFBQUFBJCQAAAAAAAAAAAEAAAC-5SM2yta7-sbBu7XBywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPcZ81~3GfNfS")
 
@@ -42,5 +41,5 @@
         (ptbk-decode ptbk data)))
 
 (defn -main []
-    (let [index (get-keyword "蔡徐坤")]
+    (let [index (get-keyword "鸡你太美")]
         (println (map #(Integer/parseInt %) (clojure.string/split (clojure.string/join "" (into [] index)) #",")))))
