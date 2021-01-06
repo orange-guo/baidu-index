@@ -1,10 +1,17 @@
 (ns club.geek666.baiduindex.api-test
     (:require [clojure.test :refer :all])
-    (:require [club.geek666.baiduindex.api :refer [gen-index-filter]]))
+    (:require [club.geek666.baiduindex.api :refer :all]
+              [clojure.data.json :as json]))
 
-;(deftest gen-filter-test
-;    (testing "TEST gen-filter"
-;        (is (= (gen-index-filter "4396") [{"name" "4396" "wordType" 1}]))))
+(deftest gen-keyword-filter-test
+    (-> (= [{"name" "鸡你太美" "wordType" 1}] (gen-keyword-filter "鸡你太美")) is testing))
 
-(deftest gen-index-filter-test
-    (testing (is (= '() '()))))
+(deftest query-params-test
+    (testing
+        (is (= {"area" 0
+                "word" "[[{\"name\":\"Jack\",\"wordType\":1}],[{\"name\":\"Tom\",\"wordType\":1}]]"
+                "days" 30} (query-params ["Jack" "Tom"])))))
+
+(deftest req-for-idx-test
+    (testing
+        (is (= "not login" (-> (req-for-idx "xxx" ["Jack" "Tom"]) :body json/read-str (get "message"))))))
