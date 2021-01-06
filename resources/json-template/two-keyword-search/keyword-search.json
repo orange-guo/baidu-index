@@ -1,0 +1,107 @@
+{
+	"//": "http://index.baidu.com/api/SearchApi/index?area=0&word=[[%7B%22name%22:%22%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E%22,%22wordType%22:1%7D],[%7B%22name%22:%22%E8%94%A1%E5%BE%90%E5%9D%A4%22,%22wordType%22:1%7D]]&startDate=2020-12-07&endDate=2021-01-05",
+	"status": 0,
+	"data": {
+		"userIndexes": [
+			{
+				"word": [
+					{
+						"name": "\u9e21\u4f60\u592a\u7f8e",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "OKrxOYYxOS3xOqXxOX3x3rYqx3rrYxOKKxOrSxKO2xOXSxX2Kx3r3Yx3rMKxOSXxOKOxOqSxXqYxOYSxXKrx3rrrxKqKxKXqxXYYx3rX2x3rqMx3rYXxXrqxKOMxKKK"
+				},
+				"pc": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "YYrxYSrxYSXxY3XxYqOx3KKx3X3xY2XxY3SxYS3xYqKxYqSx3X2xY3XxYqYxY2MxY23xYYXxYYYx3Xrx3X3xYrqxYrOxYqOxYqSxYrYxYrrx3K2xY3OxYrY"
+				},
+				"wise": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "MSrxSKYxSXYxM2rxMq2xOqKxO33xM2OxSXrxS2YxMqOxMXYxO3XxOqOxM3KxMqYxM3qxK32xMr2xKOrxOrXxSq2xSOMxMKqxOqOxOqqxOYXxK23xSMOxSKS"
+				},
+				"type": "day"
+			},
+			{
+				"word": [
+					{
+						"name": "\u8521\u5f90\u5764",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "3OM2Xx3KrKSx3MrMYx3SXXSxYr3OKxYOY3qxYO3rMx3X332x3MOMrx3MY3Xx3MrKMx3K2M3xY2OX2xYqSqKx3KYKMx3S2qrx3SKKYx3S2MYx3SXKOxYY232xY3KrKx3SKKMx3SrS2x3qOYrxYSYYSx2YSr2xYKOM2xYqr3Mx3MOr3x3MYKY"
+				},
+				"pc": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "YKXOxYXMrxYOrMxYK2MxYMYrxYr22x3XMqx2rqYxYM32xYSSYxYSq2xYSrSx3OXXxY3qKxYKqXxYSSSxYS3OxYSY2xY3YXx3OSqx3MO2xY2SMxYYX3xYYqqxY2MqxYYqXx3Oqrx3O2YxYY2OxY3Kq"
+				},
+				"wise": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "3SOq3x3q33Sx32YSMx32YSXx3KSMKxYM3O3xYM3qYx3MrK3x3qYqKx32MMKx32S22x3qOSMxY3XXqxYYqrrx3qSYKx3YKOSx32YSqx3YO2Xx32OqXxYrqSXxYrrYqx32qYrx3YKMYx3YSKMxYYOM3x2rYSqxYMrY2xYY3Oqx3qSM2x3qrXO"
+				},
+				"type": "day"
+			}
+		],
+		"generalRatio": [
+			{
+				"word": [
+					{
+						"name": "\u9e21\u4f60\u592a\u7f8e",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"avg": 903,
+					"yoy": -62,
+					"qoq": -11
+				},
+				"pc": {
+					"avg": 220,
+					"yoy": -71,
+					"qoq": -12
+				},
+				"wise": {
+					"avg": 682,
+					"yoy": -58,
+					"qoq": -10
+				}
+			},
+			{
+				"word": [
+					{
+						"name": "\u8521\u5f90\u5764",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"avg": 19680,
+					"yoy": -10,
+					"qoq": 14
+				},
+				"pc": {
+					"avg": 2360,
+					"yoy": -28,
+					"qoq": 14
+				},
+				"wise": {
+					"avg": 17320,
+					"yoy": -7,
+					"qoq": 14
+				}
+			}
+		],
+		"uniqid": "b5b7f041eb7c4531338cd67340525323"
+	},
+	"logid": 3833789663,
+	"message": 0
+}

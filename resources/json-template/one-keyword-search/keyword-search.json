@@ -1,0 +1,60 @@
+{
+	"//": "http://index.baidu.com/api/SearchApi/index?area=0&word=[[%7B%22name%22:%22%E9%B8%A1%E4%BD%A0%E5%A4%AA%E7%BE%8E%22,%22wordType%22:1%7D]]&days=30",
+	"status": 0,
+	"data": {
+		"userIndexes": [
+			{
+				"word": [
+					{
+						"name": "\u9e21\u4f60\u592a\u7f8e",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "+OoN+XXN+gDN+Z1N+1DNDoXZNDooXN+OON+ogNO+hN+1gN1hONDoDXNDo3ON+g1N+O+N+ZgN1ZXN+XgN1OoNDoooNOZONO1ZN1XXNDo1hNDoZ3NDoX1N1oZNO+3NOOO"
+				},
+				"pc": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "XXoNXgoNXg1NXD1NXZ+NDOOND1DNXh1NXDgNXgDNXZONXZgND1hNXD1NXZXNXh3NXhDNXX1NXXXND1oND1DNXoZNXo+NXZ+NXZgNXoXNXooNDOhNXD+NXoX"
+				},
+				"wise": {
+					"startDate": "2020-12-07",
+					"endDate": "2021-01-05",
+					"data": "3goNgOXNg1XN3hoN3ZhN+ZON+DDN3h+Ng1oNghXN3Z+N31XN+D1N+Z+N3DON3ZXN3DZNODhN3ohNO+oN+o1NgZhNg+3N3OZN+Z+N+ZZN+X1NOhDNg3+NgOg"
+				},
+				"type": "day"
+			}
+		],
+		"generalRatio": [
+			{
+				"word": [
+					{
+						"name": "\u9e21\u4f60\u592a\u7f8e",
+						"wordType": 1
+					}
+				],
+				"all": {
+					"avg": 903,
+					"yoy": -62,
+					"qoq": -11
+				},
+				"pc": {
+					"avg": 220,
+					"yoy": -71,
+					"qoq": -12
+				},
+				"wise": {
+					"avg": 682,
+					"yoy": -58,
+					"qoq": -10
+				}
+			}
+		],
+		"uniqid": "72d86ae95d9feeda566bdb980521032d"
+	},
+	"logid": 3870888857,
+	"message": 0
+}

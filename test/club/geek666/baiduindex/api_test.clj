@@ -15,3 +15,7 @@
 (deftest req-for-idx-test
     (testing
         (is (= "not login" (-> (req-for-idx "xxx" ["Jack" "Tom"]) :body json/read-str (get "message"))))))
+
+(deftest baidu-uss-tmp "UNsNjd2bVFQWnBkUVFFU2VydWNhR2pEYnVMMFpiaWdMUmN4cjdHNVZOSDNwaHBnSVFBQUFBJCQAAAAAAAAAAAEAAAC-5SM2yta7-sbBu7XBywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPcZ81~3GfNfS")
+(deftest search-index-test
+    (-> (instance? Number (-> (search-index baidu-uss-tmp ["鸡你太美"]) (get "status"))) is testing))
