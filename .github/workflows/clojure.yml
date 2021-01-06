@@ -1,4 +1,4 @@
-name: Clojure CI
+name: proejct-ci
 
 on:
   push:
@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
+      - name: dependencies
         run: lein deps
-      - name: Run tests
+      - name: test
         run: lein test
+      - name: build-package
+        run: lein uberjar
