@@ -12,10 +12,10 @@
                 "word" "[[{\"name\":\"Jack\",\"wordType\":1}],[{\"name\":\"Tom\",\"wordType\":1}]]"
                 "days" 30} (query-params ["Jack" "Tom"])))))
 
-(deftest req-for-idx-test
+(deftest get-for-idx-test
     (testing
-        (is (= "not login" (-> (req-for-idx "xxx" ["Jack" "Tom"]) :body json/read-str (get "message"))))))
+        (is (= "not login" (-> (get-for-idx "xxx" ["Jack" "Tom"]) :body json/read-str (get "message"))))))
 
-(deftest baidu-uss-tmp "UNsNjd2bVFQWnBkUVFFU2VydWNhR2pEYnVMMFpiaWdMUmN4cjdHNVZOSDNwaHBnSVFBQUFBJCQAAAAAAAAAAAEAAAC-5SM2yta7-sbBu7XBywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPcZ81~3GfNfS")
+(require '[club.geek666.baiduindex.app :as app])
 (deftest search-index-test
-    (-> (instance? Number (-> (search-index baidu-uss-tmp ["鸡你太美"]) (get "status"))) is testing))
+    (-> (instance? String (-> (search-index (app/baidu-uss) ["鸡你太美"]) :indexes (first) (get-in ["all" "data"]))) (is) (testing)))

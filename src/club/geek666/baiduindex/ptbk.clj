@@ -1,5 +1,7 @@
 (ns club.geek666.baiduindex.ptbk
-    (:require [clojure.string :as clj-str]))
+    (:require [clojure.string :as clj-str]
+              [clojure.data.json :as json]
+              [clojure.string :as str :only (join)]))
 
 (defn split-in-half [coll]
     (partition (/ (count coll) 2) coll))
@@ -8,4 +10,4 @@
 (defn ptbk-decode [ptbk data]
     (let [two-halves (split-in-half (vec ptbk))
           secret-map (zipmap (first two-halves) (last two-halves))]
-        (->> (map #(get secret-map %1) data) (clj-str/join ""))))
+        (->> data (map #(get secret-map %1)) (clj-str/join ""))))

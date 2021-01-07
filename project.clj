@@ -6,11 +6,13 @@
     :dependencies [[org.clojure/clojure "1.10.1"]
                    [nrepl/nrepl "0.6.0"]
                    [clj-http "3.10.3"]
-                   [org.clojure/data.json "1.0.0"]]
+                   [org.clojure/data.json "1.0.0"]
+                   [clj-commons/clj-yaml "0.7.0"]]
 
     :mirrors {#"central" {:name "huaweicloud" :url "https://mirrors.huaweicloud.com/repository/maven/" :repo-manager true}
-              "*"        {:name "aliyun" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
+              "*"        {:name "alimaven:" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
     :repositories {"huaweicloud" {:url "https://mirrors.huaweicloud.com/repository/maven/"}
-                   "aliyun"      {:url "http://maven.aliyun.com/nexus/content/groups/public"}}
-    :main club.geek666.baiduindex.core
+                   "alimaven:"   {:url "http://maven.aliyun.com/nexus/content/groups/public"}
+                   "clojars"     {:url "https://repo.clojars.org"}}
+    :main club.geek666.baiduindex.main
     :repl-options {:init-ns club.geek666.baiduindex.core})
