@@ -21,6 +21,6 @@ jobs:
       - name: upload aritifacts
         uses: actions/upload-artifact@v2
         with:
-          name: jar
-          path: target/baidu-index-*.jar
+          name: build
+          path: target/*-standalone.jar
           retention-days: 5
