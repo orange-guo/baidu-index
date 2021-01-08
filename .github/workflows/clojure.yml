@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: dependencies
+        with:
+          name: build
+          path: target/baidu-index-*.jar
+          retention-days: 5
         run: lein deps
       - name: test
         run: lein test
       - name: build-package
         run: lein uberjar
-        with:
-          name: build
-          path: target/baidu-index-*.jar
-          retention-days: 5
