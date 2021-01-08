@@ -10,10 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: cache dependencies
+      - name: Cache dependencies
         uses: actions/cache@v2
         with:
           path: ~/.m2/repository
@@ -21,16 +21,16 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: install dependencies
+      - name: Install dependencies
         run: lein deps
 
-      - name: unit test
+      - name: Unit test
         run: lein test
 
-      - name: build package
+      - name: Build package
         run: lein uberjar
 
-      - name: upload aritifacts
+      - name: Upload aritifacts
         uses: actions/upload-artifact@v2
         with:
           name: build
