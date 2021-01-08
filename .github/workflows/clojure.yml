@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: dependencies
         with:
-          name: build
+          name: jar
           path: target/baidu-index-*.jar
           retention-days: 5
+      - name: dependencies
         run: lein deps
       - name: test
         run: lein test
