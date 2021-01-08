@@ -1,4 +1,5 @@
 (ns club.geek666.baiduindex.api
+    (:gen-class)
     (:require [clj-http.client :as client]
               [clojure.data.json :as json]
               [clojure.string :as str]))

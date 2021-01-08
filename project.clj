@@ -15,4 +15,4 @@
                    "alimaven:"   {:url "http://maven.aliyun.com/nexus/content/groups/public"}
                    "clojars"     {:url "https://repo.clojars.org"}}
     :main club.geek666.baiduindex.main
-    :repl-options {:init-ns club.geek666.baiduindex.core})
+    :repl-options {:init-ns club.geek666.baiduindex.main})

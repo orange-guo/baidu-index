@@ -1,8 +1,7 @@
-(ns club.geek666.baiduindex.main)
+(ns club.geek666.baiduindex.main
+    (:gen-class))
 
 (require '[club.geek666.baiduindex.api :as api] '[club.geek666.baiduindex.app :as app] '[club.geek666.baiduindex.ptbk :as ptbk])
-
-
 
 (defn -main []
     (let [index (api/search-index (app/baidu-uss) ["鸡你太美" "蔡徐坤"])
