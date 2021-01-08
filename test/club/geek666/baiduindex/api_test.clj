@@ -6,11 +6,9 @@
 (deftest gen-keyword-filter-test
     (-> (= [{"name" "鸡你太美" "wordType" 1}] (gen-keyword-filter "鸡你太美")) is testing))
 
+(def expect-params-result {"area" 0 "word" "[[{\"name\":\"Jack\",\"wordType\":1}],[{\"name\":\"Tom\",\"wordType\":1}]]" "startDate" "2020-12-07" "endDate" "2020-12-08"})
 (deftest query-params-test
-    (testing
-        (is (= {"area" 0
-                "word" "[[{\"name\":\"Jack\",\"wordType\":1}],[{\"name\":\"Tom\",\"wordType\":1}]]"
-                "days" 30} (query-params ["Jack" "Tom"])))))
+    (-> (= expect-params-result (query-params ["Jack" "Tom"] "2020-12-07" "2020-12-08")) is testing))
 
 (deftest get-for-idx-test
     (testing

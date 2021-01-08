@@ -10,12 +10,9 @@
 (defn gen-keyword-filter [name]
     [{"name" name, "wordType" 1}])
 
-(defn query-params [keywords]
-    {"area" 0,
-     "word" (-> (map gen-keyword-filter keywords) json/write-str),
-     "days" 30})
-
-
+(defn query-params
+    ([keywords start-date end-date] {"area" 0, "word" (-> (map gen-keyword-filter keywords) json/write-str), "startDate" start-date "endDate" end-date})
+    ([keywords] {"area" 0, "word" (-> (map gen-keyword-filter keywords) json/write-str), "days" 30}))
 
 (def url-search-index "https://index.baidu.com/api/SearchApi/index")
 
