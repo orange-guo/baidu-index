@@ -4,8 +4,8 @@
               [clojure.data.json :as json]
               [clojure.string :as str]))
 
-(defn common-header [baidu-uss] {"User-Agent" "Mozilla/5.0 (X11; Linux x86_64)"
-                                 "Cookie"     (str/join "=" ["BDUSS" baidu-uss])})
+(defn header-with-auth [baidu-uss] {"User-Agent" "Mozilla/5.0 (X11; Linux x86_64)"
+                                    "Cookie"     (str/join "=" ["BDUSS" baidu-uss])})
 
 (defn gen-keyword-filter [name]
     [{"name" name, "wordType" 1}])
@@ -20,7 +20,7 @@
 (def url-search-index "https://index.baidu.com/api/SearchApi/index")
 
 (defn get-for-idx [baidu-uss keywords]
-    (client/get url-search-index {:headers (common-header baidu-uss) :query-params (query-params keywords)}))
+    (client/get url-search-index {:headers (header-with-auth baidu-uss) :query-params (query-params keywords)}))
 
 (defn search-index [baidu-uss keywords]
     (let [result (-> (get-for-idx baidu-uss keywords) :body json/read-str (get "data"))]
@@ -31,7 +31,7 @@
 (def url-get-ptbk "http://index.baidu.com/Interface/ptbk")
 
 (defn get-ptbk [baidu-uss unique-id]
-    (client/get url-get-ptbk {:headers (common-header baidu-uss) :query-params {"uniqid" unique-id}}))
+    (client/get url-get-ptbk {:headers (header-with-auth baidu-uss) :query-params {"uniqid" unique-id}}))
 
 (defn exchange-ptbk [baidu-uss unique-id]
     (-> (get-ptbk baidu-uss unique-id) :body json/read-str (get "data")))
