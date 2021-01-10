@@ -7,28 +7,34 @@
 (defn header-with-auth [baidu-uss] {"User-Agent" "Mozilla/5.0 (X11; Linux x86_64)"
                                     "Cookie"     (str/join "=" ["BDUSS" baidu-uss])})
 
-(defn gen-keyword-filter [name]
-    [{"name" name, "wordType" 1}])
+(defn query-params [req]
+    {"area"      0,
+     "word"      (json/write-str (doall (map (fn [keyword] [{"name" keyword, "wordType" 1}]) (:keywords req)))),
+     "startDate" (:start-date req)
+     "endDate"   (:end-date req)})
 
-(defn query-params
-    ([keywords start-date end-date] {"area" 0, "word" (-> (map gen-keyword-filter keywords) json/write-str), "startDate" start-date "endDate" end-date})
-    ([keywords] {"area" 0, "word" (-> (map gen-keyword-filter keywords) json/write-str), "days" 30}))
+(defn get-for-idx [req]
+    (client/get
+        "https://index.baidu.com/api/SearchApi/index"
+        {:headers (header-with-auth (:baidu-uss req)) :query-params (query-params req)}))
 
-(def url-search-index "https://index.baidu.com/api/SearchApi/index")
-
-(defn get-for-idx [baidu-uss keywords]
-    (client/get url-search-index {:headers (header-with-auth baidu-uss) :query-params (query-params keywords)}))
-
-(defn search-index [baidu-uss keywords]
-    (let [result (-> (get-for-idx baidu-uss keywords) :body json/read-str (get "data"))]
+(defn search-index [req]
+    (let [result (-> (get-for-idx req) :body json/read-str (get "data"))]
         {:unique-id (get result "uniqid") :indexes (get result "userIndexes")}))
 
 
+(defn exchange-ptbk [req]
+    (-> (client/get
+            "http://index.baidu.com/Interface/ptbk"
+            {:headers      (header-with-auth (:baidu-uss req))
+             :query-params {"uniqid" (:unique-id req)}})
+        :body json/read-str (get "data")))
 
-(def url-get-ptbk "http://index.baidu.com/Interface/ptbk")
+(require '[club.geek666.baiduindex.ptbk :refer [ptbk-decode]])
+(defn data-list-decode [ptbk data-list]
+    (into '() (map #(ptbk-decode ptbk %) data-list)))
 
-(defn get-ptbk [baidu-uss unique-id]
-    (client/get url-get-ptbk {:headers (header-with-auth baidu-uss) :query-params {"uniqid" unique-id}}))
-
-(defn exchange-ptbk [baidu-uss unique-id]
-    (-> (get-ptbk baidu-uss unique-id) :body json/read-str (get "data")))
+(defn search [req]
+    (let [index (search-index req)
+          ptbk (exchange-ptbk {:baidu-uss (:baidu-uss req) :unique-id (:unique-id index)})]
+        (->> index :indexes (map #(get-in % ["all" "data"])) (data-list-decode ptbk))))

@@ -1,8 +1,8 @@
 (ns club.geek666.baiduindex.ptbk
-    (:gen-class)
     (:require [clojure.string :as clj-str]
               [clojure.data.json :as json]
-              [clojure.string :as str :only (join)]))
+              [clojure.string :as str :only (join)])
+    (:gen-class))
 
 (defn split-in-half [coll]
     (partition (/ (count coll) 2) coll))

@@ -1,11 +1,13 @@
 (ns club.geek666.baiduindex.main
-    (:gen-class))
+	(:gen-class))
 
-(require '[club.geek666.baiduindex.api :as api] '[club.geek666.baiduindex.app :as app] '[club.geek666.baiduindex.ptbk :as ptbk])
+(require '[club.geek666.baiduindex.api :as api]
+		 '[club.geek666.baiduindex.app :refer [baidu-uss keywords start-date end-date]]
+		 '[club.geek666.baiduindex.core :refer :all])
 
 (defn -main []
-    (let [index (api/search-index (app/baidu-uss) ["鸡你太美" "蔡徐坤"])
-          unique-id (:unique-id index)
-          ptbk (api/exchange-ptbk (app/baidu-uss) unique-id)
-          data-set (->> index :indexes (map #(get-in % ["all" "data"])) (map #(ptbk/ptbk-decode ptbk %)) (into '()))]
-        (dorun (for [data data-set] (println data)))))
+	(let [result (api/search {:baidu-uss  baidu-uss
+							  :keywords   keywords
+							  :start-date start-date
+							  :end-date   end-date})]
+		(println result)))

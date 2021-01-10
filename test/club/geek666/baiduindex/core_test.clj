@@ -1,14 +1,10 @@
 (ns club.geek666.baiduindex.core-test
 	(:require [clojure.test :refer :all])
-	(:require [club.geek666.baiduindex.core :refer [iterate-days local-date-range]])
-	(:import (java.time ZonedDateTime)
-			 (java.time.format DateTimeFormatter)))
-
-(deftest iterate-days-test
-	(-> (= 5 (->> (iterate-days (ZonedDateTime/now)) (take 5) count)) is testing))
-
+	(:require [club.geek666.baiduindex.core :refer [date-iterate local-date-range]]))
 
 (deftest local-date-range-test
-	(-> (= (. DateTimeFormatter/ISO_LOCAL_DATE format (ZonedDateTime/now))
-		   (-> (local-date-range (ZonedDateTime/now)) (first)))
-		is testing))
+	(testing
+		(is (= "2012-01-02" (-> (local-date-range "2012-01-01") (nth 1)))))
+	(testing
+		(is (= 2 (count (local-date-range "2012-01-01" "2012-01-03"))))))
+
