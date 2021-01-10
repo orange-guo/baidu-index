@@ -7,7 +7,8 @@
                    [nrepl/nrepl "0.6.0"]
                    [clj-http "3.10.3"]
                    [org.clojure/data.json "1.0.0"]
-                   [clj-commons/clj-yaml "0.7.0"]]
+                   [clj-commons/clj-yaml "0.7.0"]
+                   [org.clojure/data.csv "1.0.0"]]
 
     :mirrors {#"central" {:name "huaweicloud" :url "https://mirrors.huaweicloud.com/repository/maven/" :repo-manager true}
               "*"        {:name "alimaven:" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
