@@ -9,9 +9,10 @@
 ;
 ;(def read-app-cfg (parse-class-path-yml "application.yml"))
 
-(def baidu-uss (System/getenv "BAIDU_USS"))
+(def baidu-uss (memoize #(System/getenv "BAIDU_USS")))
 
-(def keywords (->> (clojure.string/split (System/getenv "KEYWORDS") #",") (map #(clojure.string/trim %)) (into '())))
+(def keywords (memoize #(->> (clojure.string/split (System/getenv "KEYWORDS") #",")
+                            (map (fn [keyword] (clojure.string/trim keyword))))))
 
-(def start-date (System/getenv "START_DATE"))
-(def end-date (System/getenv "END_DATE"))
+(def start-date (memoize #(System/getenv "START_DATE")))
+(def end-date (memoize #(System/getenv "END_DATE")))

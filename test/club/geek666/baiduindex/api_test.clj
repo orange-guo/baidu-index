@@ -26,6 +26,6 @@
 (deftest search-index-test
     (->
         (= nil
-            (-> (search-index {:baidu-uss app/baidu-uss :keywords ["鸡你太美"]})
+            (-> (search-index {:baidu-uss (app/baidu-uss) :keywords ["鸡你太美"]})
                 :indexes (first) (get-in ["all" "data"])))
         (is) (testing)))
