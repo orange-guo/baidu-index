@@ -30,10 +30,18 @@
         :body json/read-str (get "data")))
 
 (require '[club.geek666.baiduindex.ptbk :refer [ptbk-decode]])
-(defn data-list-decode [ptbk data-list]
-    (into '() (map #(ptbk-decode ptbk %) data-list)))
+;(defn data-list-decode [ptbk data-list]
+;    (into '() (map #(ptbk-decode ptbk %) data-list)))
+
+(defn parse-data [data]
+    (doall (map (fn [str] (Integer/parseInt str)) (clojure.string/split data #","))))
 
 (defn search [req]
-    (let [index (search-index req)
-          ptbk (exchange-ptbk {:baidu-uss (:baidu-uss req) :unique-id (:unique-id index)})]
-        (->> index :indexes (map #(get-in % ["all" "data"])) (data-list-decode ptbk))))
+    (let [result (search-index req)
+          ptbk (exchange-ptbk {:baidu-uss (:baidu-uss req) :unique-id (:unique-id result)})
+          f-decode (partial ptbk-decode ptbk)]
+        (for [idx (:indexes result)] {:keyword (-> idx (get "word") first (get "name"))
+                                      :index   {:all  (parse-data (-> (get-in idx ["all" "data"]) f-decode))
+                                                :pc   (parse-data (f-decode (get-in idx ["pc" "data"])))
+                                                :wise (parse-data (f-decode (get-in idx ["wise" "data"])))
+                                                :type (get idx "type")}})))
