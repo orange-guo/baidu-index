@@ -5,7 +5,7 @@ A application that download baidu index as csv
 ## Usage
 
 Steps:  
-1. Download execution jar package [click here](https://github.com/orange-guo/baidu-index/actions)
+1. From github action list one action you selected and download [click here](https://github.com/orange-guo/baidu-index/actions)
 1. Exports variables(Shell)
 
 ```shell
