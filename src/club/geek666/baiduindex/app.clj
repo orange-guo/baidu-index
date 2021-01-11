@@ -1,5 +1,5 @@
 (ns club.geek666.baiduindex.app
-	(:gen-class))
+    (:gen-class))
 
 ;(require '[clj-yaml.core :as yml])
 ;(require '[clojure.java.io :as io])

@@ -14,9 +14,9 @@
      "endDate"   (:end-date req)})
 
 (defn get-for-idx [req]
-    (client/get
-        "https://index.baidu.com/api/SearchApi/index"
-        {:headers (header-with-auth (:baidu-uss req)) :query-params (query-params req)}))
+    (client/get "https://index.baidu.com/api/SearchApi/index"
+        {:headers      (header-with-auth (:baidu-uss req))
+         :query-params (query-params req)}))
 
 (defn search-index [req]
     (let [result (-> (get-for-idx req) :body json/read-str (get "data"))]
@@ -24,8 +24,7 @@
 
 
 (defn exchange-ptbk [req]
-    (-> (client/get
-            "http://index.baidu.com/Interface/ptbk"
+    (-> (client/get "http://index.baidu.com/Interface/ptbk"
             {:headers      (header-with-auth (:baidu-uss req))
              :query-params {"uniqid" (:unique-id req)}})
         :body json/read-str (get "data")))

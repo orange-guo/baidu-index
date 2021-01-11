@@ -26,6 +26,9 @@ jobs:
 
       - name: Unit test
         run: lein test
+        env:
+          BAIDU_USS: 123
+          KEYWORDS: "鸡你太美, 蔡徐坤"
 
       - name: Build package
         run: lein uberjar
