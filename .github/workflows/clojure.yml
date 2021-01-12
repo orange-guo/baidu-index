@@ -34,7 +34,7 @@ jobs:
         run: lein uberjar
 
       - name: Build package
-      - run: |
+        run: |
           mvdir target/build
           cp target/baidu-index-*.jar target/build/
           cp resources/scripts/* target/build/
