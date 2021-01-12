@@ -34,9 +34,10 @@ jobs:
         run: lein uberjar
 
       - name: Build package
-      - run: mvdir target/build
-      - run: cp target/baidu-index-*.jar target/build/
-      - run: cp resources/scripts/* target/build/
+      - run: |
+          mvdir target/build
+          cp target/baidu-index-*.jar target/build/
+          cp resources/scripts/* target/build/
 
       - name: Upload aritifacts
         uses: actions/upload-artifact@v2
