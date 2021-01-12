@@ -4,9 +4,11 @@ A application that download baidu index as csv
 
 ## Usage
 
-Steps:  
-1. From github action list one action you selected and download [click here](https://github.com/orange-guo/baidu-index/actions)
-1. Exports variables(Shell)
+Steps:
+
+1. From github action list one action you into and download
+   artifacts [click here](https://github.com/orange-guo/baidu-index/actions)
+1. Export variables(Shell)
 
 ```shell
 export BAIDU_USS=""
@@ -19,10 +21,12 @@ export END_DATE="index end date, such as 2021-01-07"
 # end date in search range, E.g. export END_DATE="2021-01-07"
 ```
 
-2. execute java
+2. execute jar file
+
 ```shell
 java -jar baidu-index-0.1.0-SNAPSHOT-standalone.jar
 ```
+
 3. open output.csv that in current working directory
 
 ## License

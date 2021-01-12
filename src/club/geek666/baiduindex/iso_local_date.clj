@@ -1,7 +1,7 @@
 (ns club.geek666.baiduindex.iso-local-date
-    (:gen-class)
     (:import (java.time.format DateTimeFormatter)
-             (java.time LocalDate)))
+             (java.time LocalDate))
+    (:gen-class))
 
 ; date str to Java LocalDate
 (defn parse-date [date-str] (. LocalDate parse date-str DateTimeFormatter/ISO_LOCAL_DATE))

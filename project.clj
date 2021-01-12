@@ -10,10 +10,13 @@
                    [clj-commons/clj-yaml "0.7.0"]
                    [org.clojure/data.csv "1.0.0"]]
 
+    :uberjar {:omit-source true :aot :all}
+
     :mirrors {#"central" {:name "huaweicloud" :url "https://mirrors.huaweicloud.com/repository/maven/" :repo-manager true}
               "*"        {:name "alimaven:" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
     :repositories {"huaweicloud" {:url "https://mirrors.huaweicloud.com/repository/maven/"}
                    "alimaven:"   {:url "http://maven.aliyun.com/nexus/content/groups/public"}
                    "clojars"     {:url "https://repo.clojars.org"}}
     :main club.geek666.baiduindex.main
+    :aot [club.geek666.baiduindex.main]
     :repl-options {:init-ns club.geek666.baiduindex.main})

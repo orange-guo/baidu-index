@@ -1,8 +1,8 @@
 (ns club.geek666.baiduindex.api
-    (:gen-class)
     (:require [clj-http.client :as client]
               [clojure.data.json :as json]
-              [clojure.string :as str]))
+              [clojure.string :as str])
+    (:gen-class))
 
 (defn header-with-auth [baidu-uss] {"User-Agent" "Mozilla/5.0 (X11; Linux x86_64)"
                                     "Cookie"     (str/join "=" ["BDUSS" baidu-uss])})
