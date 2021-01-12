@@ -35,7 +35,7 @@ jobs:
 
       - name: Build package
         run: |
-          mvdir target/build
+          mkdir target/build
           cp target/baidu-index-*.jar target/build/
           cp resources/scripts/* target/build/
 
