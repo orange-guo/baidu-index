@@ -1,4 +1,4 @@
-(defproject baidu-index "0.1.0-SNAPSHOT"
+(defproject baidu-index "0.0.1"
     :description "FIXME: write description"
     :url "http://example.com/FIXME"
     :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
@@ -10,7 +10,8 @@
                    [clj-commons/clj-yaml "0.7.0"]
                    [org.clojure/data.csv "1.0.0"]]
 
-    :uberjar {:omit-source true :aot :all}
+    :jar-name "baidu-index-%s.jar"
+    :uberjar-name "baidu-index-standalone-%s.jar"
 
     :mirrors {#"central" {:name "huaweicloud" :url "https://mirrors.huaweicloud.com/repository/maven/" :repo-manager true}
               "*"        {:name "alimaven:" :url "http://maven.aliyun.com/nexus/content/groups/public" :repo-manager true}}
