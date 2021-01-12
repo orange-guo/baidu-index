@@ -30,12 +30,17 @@ jobs:
           BAIDU_USS: 123
           KEYWORDS: "鸡你太美, 蔡徐坤"
 
-      - name: Build package
+      - name: Uberjar
         run: lein uberjar
+
+      - name: Build package
+      - run: mvdir target/build
+      - run: cp target/baidu-index-*.jar target/build/
+      - run: cp resources/scripts/* target/build/
 
       - name: Upload aritifacts
         uses: actions/upload-artifact@v2
         with:
           name: build
-          path: target/*-standalone.jar
+          path: target/build/**
           retention-days: 5
