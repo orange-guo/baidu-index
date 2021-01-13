@@ -1,9 +1,9 @@
-(ns club.geek666.baiduindex.main
+(ns club.geek66.baiduindex.main
     (:gen-class))
 
-(require '[club.geek666.baiduindex.api :as api]
-    '[club.geek666.baiduindex.app :refer [baidu-uss keywords start-date end-date]]
-    '[club.geek666.baiduindex.iso-local-date :refer :all]
+(require '[club.geek66.baiduindex.api :as api]
+    '[club.geek66.baiduindex.app :refer [baidu-uss keywords start-date end-date]]
+    '[club.geek66.baiduindex.iso-local-date :refer :all]
     '[clojure.data.csv :as csv]
     '[clojure.java.io :as io])
 

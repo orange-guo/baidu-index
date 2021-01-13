@@ -1,6 +1,6 @@
-(ns club.geek666.baiduindex.iso-local-date-test
+(ns club.geek66.baiduindex.iso-local-date-test
     (:require [clojure.test :refer :all])
-    (:require [club.geek666.baiduindex.iso-local-date :refer :all])
+    (:require [club.geek66.baiduindex.iso-local-date :refer :all])
     (:import (java.time LocalDate)))
 
 (deftest test-parse-format

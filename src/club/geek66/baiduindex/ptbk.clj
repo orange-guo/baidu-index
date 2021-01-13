@@ -1,4 +1,4 @@
-(ns club.geek666.baiduindex.ptbk
+(ns club.geek66.baiduindex.ptbk
     (:require [clojure.string :as clj-str]
               [clojure.data.json :as json]
               [clojure.string :as str :only (join)])

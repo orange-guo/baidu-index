@@ -1,4 +1,4 @@
-(ns club.geek666.baiduindex.iso-local-date
+(ns club.geek66.baiduindex.iso-local-date
     (:import (java.time.format DateTimeFormatter)
              (java.time LocalDate))
     (:gen-class))

@@ -1,4 +1,4 @@
-(ns club.geek666.baiduindex.api
+(ns club.geek66.baiduindex.api
     (:require [clj-http.client :as client]
               [clojure.data.json :as json]
               [clojure.string :as str])
@@ -29,7 +29,7 @@
              :query-params {"uniqid" (:unique-id req)}})
         :body json/read-str (get "data")))
 
-(require '[club.geek666.baiduindex.ptbk :refer [ptbk-decode]])
+(require '[club.geek66.baiduindex.ptbk :refer [ptbk-decode]])
 ;(defn data-list-decode [ptbk data-list]
 ;    (into '() (map #(ptbk-decode ptbk %) data-list)))
 

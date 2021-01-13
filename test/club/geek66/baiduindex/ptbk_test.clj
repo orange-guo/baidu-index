@@ -1,6 +1,6 @@
-(ns club.geek666.baiduindex.ptbk-test
+(ns club.geek66.baiduindex.ptbk-test
     (:require [clojure.test :refer :all])
-    (:require [club.geek666.baiduindex.ptbk :refer :all]))
+    (:require [club.geek66.baiduindex.ptbk :refer :all]))
 
 (def ptbk "xZBKuD9vhL7mGyX7-8%4392.+,6150")
 (def data "x9ux7x9yD7xxxD7xxXD7BxGX7ByBx7x9yy7Bvvv7BDmm7x9um7BGmy7BDBu7x9uy7xx9G7xmmX7xxvm7xBXy7xBmu7BGxy7BBBx79vmD7B9B979D9X7GXXBD799mx7Bxm97BvGD7xxux7xuuv7xGXy7mmXG7m9X97xDuB7xvDx")

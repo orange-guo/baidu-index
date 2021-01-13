@@ -1,8 +1,8 @@
-(ns club.geek666.baiduindex.api-test
+(ns club.geek66.baiduindex.api-test
     (:require [clojure.test :refer :all])
-    (:require [club.geek666.baiduindex.api :refer :all]
+    (:require [club.geek66.baiduindex.api :refer :all]
               [clojure.data.json :as json]
-              [club.geek666.baiduindex.app :as app])
+              [club.geek66.baiduindex.app :as app])
     (:import (java.util Map)))
 
 ;(deftest gen-keyword-filter-test

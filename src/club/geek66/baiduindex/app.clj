@@ -1,4 +1,4 @@
-(ns club.geek666.baiduindex.app
+(ns club.geek66.baiduindex.app
     (:gen-class))
 
 ;(require '[clj-yaml.core :as yml])

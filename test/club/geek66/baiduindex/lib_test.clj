@@ -1,4 +1,4 @@
-(ns club.geek666.baiduindex.lib-test
+(ns club.geek66.baiduindex.lib-test
     (:require [clojure.test :refer :all]))
 
 (deftest thread-first-test

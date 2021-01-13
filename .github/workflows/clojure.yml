@@ -21,8 +21,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install dependencies
-        run: lein deps
+#      - name: Install dependencies
+#        run: lein deps && lein with-profile test deps
 
       - name: Unit test
         run: lein test
